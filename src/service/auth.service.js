@@ -1,20 +1,11 @@
 const connection = require('../app/database')
 
 class authService {
-    // //插入数据到user中
-    async create(user) {
-        //执行SQL语句,返回结果
-        const {name, password} = user
-        const statement = 'INSERT INTO user (name,password) VALUES (?,?);';
-        const result = await connection.execute(statement, [name, password]);
-        return result
-    }
-
-    ////通过name查询用户信息
-    async getUserByName(name) {
-        const statement = 'SELECT * FROM user WHERE name= ?;';
-        const result = await connection.execute(statement, [name]);
-        return result[0];//第一个元素为查询到的用户信息
+    //通过/删除的动态的用户id 判断是否是本人的
+    async checkResource(id,momentId) {
+        const statement = 'SELECT * FROM moment WHERE id= ?;';
+        const [result] = await connection.execute(statement, [momentId]);
+        return result[0].user_id===id;
     }
 }
 

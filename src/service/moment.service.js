@@ -25,6 +25,13 @@ class momentService {
         const [res] = await connection.execute(statement, [offset, size]);
         return res;
     }
+
+    //更新动态信息
+    async update(momentId,content) {
+        const statement = `UPDATE moment SET content = ? WHERE id = ?;`;
+        const [result] = await connection.execute(statement, [content, momentId]);
+        return result;
+    }
 }
 
 module.exports = new momentService()

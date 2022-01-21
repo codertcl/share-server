@@ -11,11 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcb18e4a-102c-48f4-88de-21f9e21f6ba3" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/moment.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/moment.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/moment.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/error-handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/error-handle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/error-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/error-types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/moment.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/moment.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/moment.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/moment.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/moment.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/moment.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2learnNode/7mysql/02mysql2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -100,6 +103,7 @@
       <workItem from="1642689506646" duration="256000" />
       <workItem from="1642732389538" duration="4342000" />
       <workItem from="1642751641600" duration="8604000" />
+      <workItem from="1642773043269" duration="3697000" />
     </task>
     <servers />
   </component>
@@ -154,10 +158,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="10" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1642585003197" />
-    <state x="228" y="30" width="747" height="614" key="find.popup" timestamp="1642756353481">
+    <state x="228" y="0" width="747" height="728" key="find.popup" timestamp="1642776352657">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="228" y="30" width="747" height="614" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1642756353481" />
+    <state x="228" y="0" width="747" height="728" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1642776352657" />
     <state x="341" y="190" width="788" height="344" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1642585000933">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

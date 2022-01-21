@@ -29,8 +29,19 @@ class momentController {
         //1:获取查询参数
         const {offset, size} = ctx.query;
         //2:查询列表
-        const res = await momentService.getMomentList(offset,size)
-        ctx.body =res
+        const res = await momentService.getMomentList(offset, size)
+        ctx.body = res
+    }
+
+    ////更新动态信息
+    async update(ctx, next) {
+        // //1:获取动态id momentId
+        const {momentId} = ctx.params;
+        const {content} = ctx.request.body;
+
+        // //2:查根据momentId更新动态信息
+        const res = await momentService.update(momentId,content)
+        ctx.body = res
     }
 }
 
