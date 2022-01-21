@@ -1,5 +1,5 @@
 const mysql = require('mysql2')
-const config = require('./config')//导入数据库配置信息
+const config = require('./config') //导入数据库配置信息
 const connection = mysql.createPool({
     host: config.MYSQL_HOST,
     post: config.MYSQL_PORT,
@@ -18,4 +18,6 @@ connection.getConnection((err, conn) => {
     })
 })
 
+//这里导出connection.promise()后,才能service文件中才能使用await
+// await connection.execute(statement, [name, password]);
 module.exports = connection.promise()

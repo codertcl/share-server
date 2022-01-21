@@ -39,6 +39,9 @@ const verifyAuth = async (ctx, next) => {
     console.log('验证授权middleware')
     //1:获取token
     const authorization = ctx.headers.authorization;
+    if (!authorization) {//判断是否携带token
+        return ctx.app.emit('error', new Error(errorType.UNAUTHORIAZTION), ctx)
+    }
     const token = authorization.replace('Bearer ', '')
 
     //2:验证token (token携带的数据)

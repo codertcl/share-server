@@ -11,21 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcb18e4a-102c-48f4-88de-21f9e21f6ba3" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/keys/private.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/keys/public.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/moment.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/moment.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/moment.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/error-handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/error-handle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/error-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/error-types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/auth.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/user.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,17 +47,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../1learn-node/5常用内置模块" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2learnNode/7mysql/02mysql2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\service" />
+      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\controller" />
+      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\router" />
       <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\app" />
       <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\app\keys" />
-      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\service" />
-      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\middleware" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.config.js">
@@ -108,7 +99,7 @@
       <workItem from="1642686088989" duration="3238000" />
       <workItem from="1642689506646" duration="256000" />
       <workItem from="1642732389538" duration="4342000" />
-      <workItem from="1642751641600" duration="1050000" />
+      <workItem from="1642751641600" duration="8604000" />
     </task>
     <servers />
   </component>
@@ -139,41 +130,41 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="184" y="50" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1280.680@0.0.1280.680" timestamp="1642495155649" />
-    <state x="368" y="36" key="FileChooserDialogImpl" timestamp="1642747587345">
+    <state x="368" y="36" key="FileChooserDialogImpl" timestamp="1642769440748">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="368" y="36" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1642747587345" />
-    <state width="1254" height="156" key="GridCell.Tab.0.bottom" timestamp="1642751878513">
+    <state x="368" y="36" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1642769440748" />
+    <state width="1254" height="156" key="GridCell.Tab.0.bottom" timestamp="1642769441420">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1642751878513" />
-    <state width="1254" height="156" key="GridCell.Tab.0.center" timestamp="1642751878513">
+    <state width="1254" height="156" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
+    <state width="1254" height="156" key="GridCell.Tab.0.center" timestamp="1642769441420">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1642751878512" />
-    <state width="1254" height="156" key="GridCell.Tab.0.left" timestamp="1642751878512">
+    <state width="1254" height="156" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
+    <state width="1254" height="156" key="GridCell.Tab.0.left" timestamp="1642769441420">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1642751878512" />
-    <state width="1254" height="156" key="GridCell.Tab.0.right" timestamp="1642751878513">
+    <state width="1254" height="156" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
+    <state width="1254" height="156" key="GridCell.Tab.0.right" timestamp="1642769441420">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1642751878513" />
+    <state width="1254" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
     <state x="10" y="0" key="SettingsEditor" timestamp="1642585003197">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="10" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1642585003197" />
-    <state x="267" y="0" width="747" height="680" key="find.popup" timestamp="1642689615986">
+    <state x="228" y="30" width="747" height="614" key="find.popup" timestamp="1642756353481">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="267" y="0" width="747" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1642689615986" />
+    <state x="228" y="30" width="747" height="614" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1642756353481" />
     <state x="341" y="190" width="788" height="344" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1642585000933">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="341" y="190" width="788" height="344" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1280.680@0.0.1280.680" timestamp="1642585000933" />
-    <state x="219" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1642603654773">
+    <state x="219" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1642757359706">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="219" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1642603654773" />
+    <state x="219" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1642757359706" />
   </component>
 </project>
