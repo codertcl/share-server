@@ -37,7 +37,6 @@ const verifyLogin = async (ctx, next) => {
 
 //判断是否认证成功
 const verifyAuth = async (ctx, next) => {
-    console.log('验证授权middleware')
     //1:获取token
     const authorization = ctx.headers.authorization;
     if (!authorization) {//判断是否携带token
@@ -59,16 +58,27 @@ const verifyAuth = async (ctx, next) => {
     }
 }
 
-//判断用户是否有权限修改删除某条动态(判断自己是不是该动态作者)
+/**
+ * 1.很多的内容都需要验证权限: 修改/删除动态, 修改/删除评论
+ * 2.接口: 业务接口系统/后端管理系统
+ *  一对一: user -> role
+ *  多对多: role -> menu(删除动态/修改动态)
+ *
+ * 3.传入表名方式
+ *  3.1:使用闭包，verifyPermission函数参数为tableName，在router文件中传入
+ *      将校验函数作为返回值返回，并在router文件中调用
+ *  3.2: 通过Object.keys(ctx.params)获取到在url中传入的参数{commentId:}或者{moemntId:}
+ *      通过replace方法获取到要操作的表名tableName
+ */
+//
 const verifyPermission = async (ctx, next) => {
-    console.log('验证权限middleware')
-    //1:获取动态id momentId
-    const {momentId} = ctx.params;
-    const {content} = ctx.request.body;
     const {id} = ctx.user;
-
+    //获取当前操作的表名
+    const [resourceKey] = Object.keys(ctx.params)
+    let tableName = resourceKey.replace('Id', '')
+    let resourceId = ctx.params[resourceKey]
     //2:查询要修改/删除的动态的用户id 判断是否是本人的
-    const isPremit = await authService.checkResource(id, momentId)
+    const isPremit = await authService.checkResource(tableName, resourceId, id)
     if (isPremit) {
         await next()
     } else {
@@ -76,6 +86,24 @@ const verifyPermission = async (ctx, next) => {
         ctx.app.emit('error', error, ctx)
     }
 }
+//闭包
+// const verifyPermission = (tableName) => {
+//     return async (ctx, next) => {
+//         //1:获取动态id momentId
+//         const {id} = ctx.params;
+//         const {userId} = ctx.user;
+//
+//         //2:查询要修改/删除的动态的用户id 判断是否是本人的
+//         const isPremit = await authService.checkResource(tableName, id, userId)
+//         if (isPremit) {
+//             await next()
+//         } else {
+//             const error = new Error(errorType.UNPERMISSION)
+//             ctx.app.emit('error', error, ctx)
+//         }
+//     }
+// }
+
 module.exports = {
     verifyLogin,
     verifyAuth,

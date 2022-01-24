@@ -43,6 +43,16 @@ class momentController {
         const res = await momentService.update(momentId,content)
         ctx.body = res
     }
+
+    ////删除动态信息
+    async remove(ctx, next) {
+        // //1:获取动态id momentId
+        const {momentId} = ctx.params;
+
+        // //2:查根据momentId删除动态信息
+        const res = await momentService.remove(momentId)
+        ctx.body = res
+    }
 }
 
 module.exports = new momentController()

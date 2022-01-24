@@ -2,7 +2,7 @@ const Router = require('koa-router')
 const momentRouter = new Router({prefix:'/moment'})
 
 const {
-    create,detail,list,update
+    create,detail,list,update,remove
 } = require('../controller/moment.controller.js')
 
 const {
@@ -17,5 +17,5 @@ momentRouter.post('/',verifyAuth,create)
 //修改和删除动态信息
 // 1.用户必须登录 2.用户具备权限
 momentRouter.patch('/:momentId', verifyAuth, verifyPermission, update);
-// momentRouter.delete('/:momentId', verifyAuth, verifyPermission, remove);
+momentRouter.delete('/:momentId', verifyAuth, verifyPermission, remove);
 module.exports = momentRouter;
