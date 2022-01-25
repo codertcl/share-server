@@ -11,16 +11,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcb18e4a-102c-48f4-88de-21f9e21f6ba3" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/comment.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/comment.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/comment.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/file-path.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/file.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/label.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware/file.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware/label.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/file.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/label.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/file.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/label.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/avatar/78f6a1a4a65aad459af3c3d8861f7f79" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/picture/4d51e92595532053eb83b7a5fa56e1ae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/picture/868f00b1fdb9ca30ca7adee9f7214ca1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/picture/ca590ae42d4328443ea1cf61e1c8e882" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/picture/e42bfa04c705ebada5c450348187ccb8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/error-handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/error-handle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/moment.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/moment.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/user.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/auth.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/moment.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/moment.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/user.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/moment.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/moment.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,25 +69,31 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/middleware" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\middleware" />
       <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\service" />
-      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\router" />
       <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\controller" />
+      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\router" />
       <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\app" />
-      <recent name="F:\前端\knowledge\node\coderwhy\code\coderhub\src\app\keys" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.config.js">
+  <component name="RunManager" selected="Node.js.file.router.js">
     <configuration name="config.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/app/config.js" working-dir="$PROJECT_DIR$/src/app">
       <method v="2" />
     </configuration>
+    <configuration name="file.router.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/router/file.router.js" working-dir="$PROJECT_DIR$/src/router">
+      <method v="2" />
+    </configuration>
     <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/main.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="user.middleware.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/middleware/user.middleware.js" working-dir="$PROJECT_DIR$/src/middleware">
@@ -78,6 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.file.router.js" />
+        <item itemvalue="Node.js.test.js" />
         <item itemvalue="Node.js.config.js" />
         <item itemvalue="Node.js.user.middleware.js" />
         <item itemvalue="Node.js.main.js" />
@@ -108,7 +133,8 @@
       <workItem from="1642773043269" duration="3834000" />
       <workItem from="1642849749430" duration="3227000" />
       <workItem from="1642940752347" duration="4863000" />
-      <workItem from="1642990052387" duration="11317000" />
+      <workItem from="1642990052387" duration="14834000" />
+      <workItem from="1643076778978" duration="27741000" />
     </task>
     <servers />
   </component>
@@ -143,37 +169,49 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="368" y="36" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1642769440748" />
-    <state width="1254" height="156" key="GridCell.Tab.0.bottom" timestamp="1642769441420">
+    <state width="1254" height="119" key="GridCell.Tab.0.bottom" timestamp="1643108879139">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
-    <state width="1254" height="156" key="GridCell.Tab.0.center" timestamp="1642769441420">
+    <state width="1254" height="119" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1643108879139" />
+    <state width="1254" height="119" key="GridCell.Tab.0.center" timestamp="1643108879139">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
-    <state width="1254" height="156" key="GridCell.Tab.0.left" timestamp="1642769441420">
+    <state width="1254" height="119" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1643108879139" />
+    <state width="1254" height="119" key="GridCell.Tab.0.left" timestamp="1643108879138">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
-    <state width="1254" height="156" key="GridCell.Tab.0.right" timestamp="1642769441420">
+    <state width="1254" height="119" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1643108879138" />
+    <state width="1254" height="119" key="GridCell.Tab.0.right" timestamp="1643108879139">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1254" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1642769441420" />
+    <state width="1254" height="119" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1643108879139" />
     <state x="10" y="0" key="SettingsEditor" timestamp="1642585003197">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="10" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1642585003197" />
-    <state x="212" y="0" width="747" height="728" key="find.popup" timestamp="1642994638765">
+    <state x="212" y="0" width="747" height="728" key="find.popup" timestamp="1643122766417">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="212" y="0" width="747" height="728" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1642994638765" />
+    <state x="212" y="0" width="747" height="728" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1643122766417" />
     <state x="341" y="190" width="788" height="344" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1642585000933">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="341" y="190" width="788" height="344" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1280.680@0.0.1280.680" timestamp="1642585000933" />
-    <state x="219" y="0" width="840" height="678" key="search.everywhere.popup" timestamp="1642994763127">
+    <state x="219" y="0" width="840" height="678" key="search.everywhere.popup" timestamp="1643116930861">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="219" y="0" width="840" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1642994763127" />
+    <state x="219" y="0" width="840" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1643116930861" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controller/user.controller.js</url>
+          <line>6</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

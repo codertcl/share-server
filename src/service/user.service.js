@@ -16,6 +16,13 @@ class userService {
         const result = await connection.execute(statement, [name]);
         return result[0];//第一个元素为查询到的用户信息
     }
+
+    ////通过id更新user表中用户的头像信息
+    async updateAvatarUrlById(avatarUrl,id) {
+        const statement = 'update user set avatar_url=? WHERE id= ?;';
+        const [result] = await connection.execute(statement, [avatarUrl,id]);
+        return result;
+    }
 }
 
 module.exports = new userService()

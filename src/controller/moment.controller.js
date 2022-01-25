@@ -1,4 +1,7 @@
 const momentService = require('../service/moment.service')
+const fileService = require('../service/file.service')
+const {PICTURE_PATH} = require("../constants/file-path");
+const fs = require('fs')
 
 class momentController {
     async create(ctx, next) {
@@ -40,7 +43,7 @@ class momentController {
         const {content} = ctx.request.body;
 
         // //2:查根据momentId更新动态信息
-        const res = await momentService.update(momentId,content)
+        const res = await momentService.update(momentId, content)
         ctx.body = res
     }
 
@@ -50,8 +53,40 @@ class momentController {
         const {momentId} = ctx.params;
 
         // //2:查根据momentId删除动态信息
-        const res = await momentService.remove(momentId)
-        ctx.body = res
+        ctx.body = await momentService.remove(momentId)
+    }
+
+    //为动态添加标签
+    async addLabels(ctx, next) {
+        // //1:获取动态 momentId
+        const {momentId} = ctx.params;
+        const {labels} = ctx;
+        console.log(momentId, labels)
+
+        //2：添加所有标签
+        for (let label of labels) {
+            const isExist = momentService.hasLabel(momentId, label.id)
+            if (!isExist) {
+                await momentService.addLabel(momentId, label.id)
+            }
+        }
+
+        ctx.body = "给动态添加标签成功~";
+    }
+
+    //配置浏览器请求访问动态图片的接口
+    async fileInfo(ctx, next) {
+        // 获取用户请求传递的参数
+        let {filename} = ctx.params;
+        const fileInfo = await fileService.getFileByFilename(filename)
+        //通过params参数设置三种格式图片的展示
+        const {type} = ctx.params
+        const types = ['small', 'middle', 'large']
+        if (types.includes(type)) {
+            filename = filename + '-' + type
+        }
+        ctx.response.set('content-type', fileInfo.mimeType)
+        ctx.body = fs.createReadStream(`${PICTURE_PATH}/${filename}`)
     }
 }
 
