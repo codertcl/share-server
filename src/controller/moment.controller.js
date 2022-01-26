@@ -80,10 +80,11 @@ class momentController {
         let {filename} = ctx.params;
         const fileInfo = await fileService.getFileByFilename(filename)
         //通过params参数设置三种格式图片的展示
-        const {type} = ctx.params
+        const {type} = ctx.query
         const types = ['small', 'middle', 'large']
-        if (types.includes(type)) {
-            filename = filename + '-' + type
+        if (types.indexOf(type) !== -1) {
+            let name = filename.split('.')[0], extraname = filename.split('.')[1]
+            filename = name + '-' + type + '.' + extraname
         }
         ctx.response.set('content-type', fileInfo.mimeType)
         ctx.body = fs.createReadStream(`${PICTURE_PATH}/${filename}`)
