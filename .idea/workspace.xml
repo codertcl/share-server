@@ -10,12 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb18e4a-102c-48f4-88de-21f9e21f6ba3" name="默认更改列表" comment="">
+    <list default="true" id="bcb18e4a-102c-48f4-88de-21f9e21f6ba3" name="默认更改列表" comment="feat:优化生成访问不同大小图片算法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/picture/4d51e92595532053eb83b7a5fa56e1ae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/picture/868f00b1fdb9ca30ca7adee9f7214ca1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/picture/ca590ae42d4328443ea1cf61e1c8e882" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/picture/e42bfa04c705ebada5c450348187ccb8" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/middleware" />
+    <property name="last_opened_file_path" value="E:/毕设/网盘" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -116,7 +112,8 @@
       <workItem from="1643076778978" duration="27741000" />
       <workItem from="1643164386875" duration="1373000" />
       <workItem from="1643183799244" duration="974000" />
-      <workItem from="1643185256785" duration="6047000" />
+      <workItem from="1643185256785" duration="9339000" />
+      <workItem from="1643257161520" duration="907000" />
     </task>
     <task id="LOCAL-00001" summary="feat:优化生成访问不同大小图片算法">
       <created>1643191976228</created>
@@ -125,7 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643191976228</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat:优化生成访问不同大小图片算法">
+      <created>1643192022243</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643192022243</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat:优化生成访问不同大小图片算法">
+      <created>1643192055811</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1643192055811</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,10 +172,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="306" y="25" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1643186973485" />
-    <state x="368" y="36" key="FileChooserDialogImpl" timestamp="1642769440748">
+    <state x="368" y="36" key="FileChooserDialogImpl" timestamp="1643260901947">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="368" y="36" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1642769440748" />
+    <state x="368" y="36" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1643260901947" />
     <state width="1254" height="119" key="GridCell.Tab.0.bottom" timestamp="1643108879139">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -185,6 +196,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="10" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1642585003197" />
+    <state x="133" y="0" key="Vcs.Push.Dialog.v2" timestamp="1643192060253">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="133" y="0" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1643192060253" />
     <state x="212" y="0" width="747" height="680" key="find.popup" timestamp="1643191050592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
