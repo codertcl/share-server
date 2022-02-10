@@ -17,11 +17,14 @@ class authController {
             expiresIn: 60 * 60 * 24,
             algorithm: 'RS256'
         })
-        ctx.status = 200
         ctx.body = {
-            id,
-            name,
-            token
+            status: 200,
+            message: '登录成功~',
+            info: {
+                id,
+                name,
+                token
+            }
         }
     }
 
