@@ -4,6 +4,9 @@ const fileService = require('../service/file.service')
 const {
     AVATAR_PATH
 } = require('../constants/file-path')
+const {
+    log
+} = require('console')
 class userController {
     //1:创建用户
     async create(ctx, next) {
@@ -19,15 +22,40 @@ class userController {
     }
 
 
-    //2:获取头像信息
-    async avatarInfo(ctx, next) {
+    //2:获取用户信息
+    async getUserInfo(ctx, next) {
         // 获取用户请求传递的参数
         const {
             userId
         } = ctx.params
-        const avatarInfo = await fileService.getAvatarByUserId(userId)
-        ctx.response.set('content-type', avatarInfo.mimeType)
-        ctx.body = fs.createReadStream(`${AVATAR_PATH}/${avatarInfo.filename}`)
+        const info = await userService.getUserInfoById(userId)
+        ctx.body = {
+            message: '获取用户信息成功',
+            status: 200,
+            info
+        }
+    }
+
+    //3:更新用户信息信息
+    async updateUserInfo(ctx, next) {
+        //1:获取用户id
+        const {
+            userId
+        } = ctx.params
+
+        //2:将信息存储到user表中
+        const res = await userService.updateUserInfo(ctx.request.body, userId)
+        if (res) {
+            ctx.body = {
+                status: 200,
+                message: '更新用户信息成功'
+            }
+        } else {
+            ctx.body = {
+                status: 400,
+                message: '该用户名已存在'
+            }
+        }
     }
 }
 

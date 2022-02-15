@@ -4,20 +4,25 @@ const errorType = require('../constants/error-types')
 const userService = require('../service/user.service')
 const authService = require('../service/auth.service');
 const md5password = require('../utils/password-handle')
-const {PUBLIC_KEY} = require('../app/config')
+const {
+    PUBLIC_KEY
+} = require('../app/config')
 //验证用户登录信息
 const verifyLogin = async (ctx, next) => {
     //1:获取用户信息
-    const {name, password} = ctx.request.body
+    const {
+        name,
+        password
+    } = ctx.request.body
     //2:用户信息不能为空  空字符串==null false  !''为TRUE
     if (!name || !password) {
         const error = new Error(errorType.NAME_OR_PASSWORD_IS_NOT_REQUIRED)
-        return ctx.app.emit('error', error, ctx)//第一个参数为事件名称 后面为参数
+        return ctx.app.emit('error', error, ctx) //第一个参数为事件名称 后面为参数
     }
     //3:判断本次注册用户是否已经存在
-    const result = await userService.getUserByName(name);////存储查询到的信息
-    const user = result[0]//查询到用户信息
-    if (!user) {//用户不存在
+    const result = await userService.getUserByName(name); ////存储查询到的信息
+    const user = result[0] //查询到用户信息
+    if (!user) { //用户不存在
         const error = new Error(errorType.USER_NOT_EXISTS)
         return ctx.app.emit('error', error, ctx)
     }
@@ -39,7 +44,7 @@ const verifyLogin = async (ctx, next) => {
 const verifyAuth = async (ctx, next) => {
     //1:获取token
     const authorization = ctx.headers.authorization;
-    if (!authorization) {//判断是否携带token
+    if (!authorization) { //判断是否携带token
         return ctx.app.emit('error', new Error(errorType.UNAUTHORIAZTION), ctx)
     }
     const token = authorization.replace('Bearer ', '')
@@ -71,12 +76,14 @@ const verifyAuth = async (ctx, next) => {
  */
 //
 const verifyPermission = async (ctx, next) => {
-    const {id} = ctx.user;
+    const {
+        id
+    } = ctx.user;
     //获取当前操作的表名
     const [resourceKey] = Object.keys(ctx.params)
     let tableName = resourceKey.replace('Id', '')
     let resourceId = ctx.params[resourceKey]
-    //2:查询要修改/删除的动态的用户id 判断是否是本人的
+    //2:查询要修改/删除的信息对应的用户 判断是否是本人的
     const isPremit = await authService.checkResource(tableName, resourceId, id)
     if (isPremit) {
         await next()

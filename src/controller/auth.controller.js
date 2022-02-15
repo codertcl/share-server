@@ -20,11 +20,8 @@ class authController {
         ctx.body = {
             status: 200,
             message: '登录成功~',
-            info: {
-                id,
-                name,
-                token
-            }
+            info: ctx.user,
+            token
         }
     }
 
