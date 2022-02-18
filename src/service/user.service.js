@@ -43,7 +43,7 @@ class userService {
 
         let executeRes = await connection.execute('SELECT * FROM user WHERE name= ?;', [name]);
         // 判断该用户名对应用户是否存在 如果存在且查到的用户id和当前登录用户id不同 则该用户名会重复 提示错误
-        if (executeRes[0].length && executeRes[0].id !== id) {
+        if (executeRes[0].length && executeRes[0][0].id != id) {
             return false
         }
 

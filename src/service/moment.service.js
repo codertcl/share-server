@@ -6,10 +6,10 @@ const sqlFragment = `SELECT
 
 class momentService {
     // //插入数据到moment中
-    async create(userId, content) {
+    async create(userId, content,pictures) {
         //执行SQL语句,返回结果
-        const statement = 'INSERT INTO moment (user_id,content) VALUES (?,?);';
-        const result = await connection.execute(statement, [userId, content]);
+        const statement = 'INSERT INTO moment (user_id,content,pictures) VALUES (?,?,?);';
+        const result = await connection.execute(statement, [userId, content,pictures]);
         return result
     }
 
@@ -74,6 +74,30 @@ class momentService {
     async addLabel(momentId, labelId) {
         const statement = `insert into moment_label (moment_id, label_id) values (?,?);`;
         const [result] = await connection.execute(statement, [momentId, labelId]);
+        return result;
+    }
+
+
+    //获取所有动态及评论信息
+    async getAllMoments() {
+        const statement =
+            ` SELECT
+        m.id id,m.content content, m.createAt createTime,  m.updateAt updateTime,
+        m.pictures pictures, 	
+        JSON_OBJECT('id',u.id,'name',u.name,'avatar',u.avatar_url,
+           'createTime',u.createAt ,'updateTime',u.updateAt) author,
+        JSON_ARRAYAGG(
+        JSON_OBJECT('id',c.id,'content',c.content,'commentId',c.comment_id,
+        'createTime',c.createAt,'updateTime',c.updateAt,'user',
+        JSON_OBJECT('id',us.id,'name',us.name,
+                    'avatar',us.avatar_url,'createTime',us.createAt,
+                    'updateTime',us.updateAt))) comments
+            FROM moment m 
+            LEFT JOIN user u on m.user_id=u.id 
+            LEFT JOIN comment c on m.id=c.moment_id			
+            LEFT JOIN user us on us.id=c.user_id			
+            GROUP BY m.id;`;
+        const [result] = await connection.execute(statement);
         return result;
     }
 

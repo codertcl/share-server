@@ -48,7 +48,6 @@ const verifyAuth = async (ctx, next) => {
         return ctx.app.emit('error', new Error(errorType.UNAUTHORIAZTION), ctx)
     }
     const token = authorization.replace('Bearer ', '')
-
     //2:验证token (token携带的数据)
     try {
         ctx.user = jwt.verify(token, PUBLIC_KEY, {
@@ -92,26 +91,31 @@ const verifyPermission = async (ctx, next) => {
         ctx.app.emit('error', error, ctx)
     }
 }
-//闭包
-// const verifyPermission = (tableName) => {
-//     return async (ctx, next) => {
-//         //1:获取动态id momentId
-//         const {id} = ctx.params;
-//         const {userId} = ctx.user;
-//
-//         //2:查询要修改/删除的动态的用户id 判断是否是本人的
-//         const isPremit = await authService.checkResource(tableName, id, userId)
-//         if (isPremit) {
-//             await next()
-//         } else {
-//             const error = new Error(errorType.UNPERMISSION)
-//             ctx.app.emit('error', error, ctx)
-//         }
-//     }
-// }
+
+
+// 判断用户在查看自己关注的人的所有动态列表时是否有权限
+const verifyGetPermission = async (ctx, next) => {
+    //1:获取要查看的所有关注者动态列表的用户id
+    const {
+        userId
+    } = ctx.params;
+    // 当前登录的用户id
+    const {
+        id
+    } = ctx.user;
+
+    //2:判断请求路径中的用户id 判断是否是本人的
+    if (id == userId) {
+        await next()
+    } else {
+        const error = new Error(errorType.UNPERMISSION)
+        ctx.app.emit('error', error, ctx)
+    }
+}
 
 module.exports = {
     verifyLogin,
     verifyAuth,
-    verifyPermission
+    verifyPermission,
+    verifyGetPermission
 }

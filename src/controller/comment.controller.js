@@ -8,7 +8,7 @@ class CommentController {
         ctx.body = await service.create(momentId, content, id)
     }
 
-    //2:回复评论 多了一个评论的id
+    //2:回复某条评论 多了一个评论的id
     async reply(ctx, next) {
         const {momentId, content} = ctx.request.body;
         const {id} = ctx.user

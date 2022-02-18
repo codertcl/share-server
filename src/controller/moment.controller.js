@@ -10,8 +10,9 @@ class momentController {
         //1:获取user_id content
         const userId = ctx.user.id;
         const content = ctx.request.body.content;
+        const pictures = ctx.request.body.pictures;
 
-        let res = await momentService.create(userId, content)
+        let res = await momentService.create(userId, content,pictures)
         //2:将数据插入到数据库
         // 获取该动态在表中的id,便于和上传的图片关联并设置到ctx.body中
         ctx.body = {
@@ -112,6 +113,18 @@ class momentController {
         }
         ctx.response.set('content-type', fileInfo.mimeType)
         ctx.body = fs.createReadStream(`${PICTURE_PATH}/${filename}`)
+    }
+
+
+    // 获取该用户的关注列表中用户的动态
+    async getAllMoments(ctx, next) {
+        const res = await momentService.getAllMoments()
+        console.log(res);
+        ctx.body = {
+            status:200,
+            info: res,
+            message:'获取动态和评论信息成功'
+        }
     }
 }
 
