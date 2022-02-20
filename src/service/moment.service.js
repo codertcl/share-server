@@ -6,10 +6,10 @@ const sqlFragment = `SELECT
 
 class momentService {
     // //插入数据到moment中
-    async create(userId, content,pictures) {
+    async create(userId, content, pictures) {
         //执行SQL语句,返回结果
         const statement = 'INSERT INTO moment (user_id,content,pictures) VALUES (?,?,?);';
-        const result = await connection.execute(statement, [userId, content,pictures]);
+        const result = await connection.execute(statement, [userId, content, pictures]);
         return result
     }
 
@@ -83,7 +83,7 @@ class momentService {
         const statement =
             ` SELECT
         m.id id,m.content content, m.createAt createTime,  m.updateAt updateTime,
-        m.pictures pictures, 	
+        m.pictures pictures,m.likeNum likeNum, 	
         JSON_OBJECT('id',u.id,'name',u.name,'avatar',u.avatar_url,
            'createTime',u.createAt ,'updateTime',u.updateAt) author,
         JSON_ARRAYAGG(
@@ -98,6 +98,14 @@ class momentService {
             LEFT JOIN user us on us.id=c.user_id			
             GROUP BY m.id;`;
         const [result] = await connection.execute(statement);
+        return result;
+    }
+
+
+    //更新动态点赞数量
+    async updateLikeNum(id, num) {
+        const statement = `UPDATE moment SET likeNum = ? WHERE id = ?;`;
+        const [result] = await connection.execute(statement, [num, id]);
         return result;
     }
 

@@ -11,7 +11,8 @@ const {
     remove,
     addLabels,
     fileInfo,
-    getAllMoments
+    getAllMoments,
+    updateLikeNum
 } = require('../controller/moment.controller.js')
 
 const {
@@ -37,10 +38,13 @@ momentRouter.delete('/:momentId', verifyAuth, verifyPermission, remove);
 //给动态添加标签
 momentRouter.post('/:momentId/labels', verifyAuth, verifyPermission, verifyLabelExists, addLabels)
 
-//获取关注的人的动态列表 首先获取到所有动态及其评论细细
+//获取关注的人的动态列表 首先获取到所有动态及其评论信息
 //前端通过用户的follows字段进行筛选出关注的人的动态
 momentRouter.get('/:userId/all', verifyAuth, verifyGetPermission, getAllMoments)
 
 //在浏览器通过请求查看动态图片
 momentRouter.get('/images/:filename', fileInfo)
+
+//动态点赞数量修改
+momentRouter.patch('/:momentId/updateLikeNum', verifyAuth, updateLikeNum)
 module.exports = momentRouter;
