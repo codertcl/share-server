@@ -9,7 +9,7 @@ const {
     verifyAuth, verifyPermission
 } = require('../middleware/auth.middleware.js')
 
-//发布评论
+//对某动态发布评论
 commentRouter.post('/', verifyAuth, create)
 //回复评论
 commentRouter.post('/:commentId/reply', verifyAuth, verifyPermission, reply)

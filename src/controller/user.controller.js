@@ -13,11 +13,18 @@ class userController {
         // 获取用户请求传递的参数
         const user = ctx.request.body
         // 获取SQL语句执行结果,设置到ctx.body中
-        await userService.create(user)
+        const res = await userService.create(user)
         // 返回数据
-        ctx.body = {
-            status: 200,
-            message: '注册成功,赶快登录吧'
+        if (res) {
+            ctx.body = {
+                status: 200,
+                message: '注册成功,赶快登录吧'
+            }
+        } else {
+            ctx.body = {
+                status: 400,
+                message: '该用户名已存在'
+            }
         }
     }
 
@@ -36,7 +43,7 @@ class userController {
         }
     }
 
-    //3:更新用户信息信息
+    //3:更新用户信息
     async updateUserInfo(ctx, next) {
         //1:获取用户id
         const {
@@ -54,6 +61,27 @@ class userController {
             ctx.body = {
                 status: 400,
                 message: '该用户名已存在'
+            }
+        }
+    }
+
+
+    //4:更新用户密码
+    async updatePassword(ctx, next) {
+        //1:获取用户id
+        const {
+            userId
+        } = ctx.params
+        const {
+            password
+        } = ctx.request.body
+
+        //2:将信息存储到user表中
+        const res = await userService.updatePassword(password, userId)
+        if (res) {
+            ctx.body = {
+                status: 200,
+                message: '更新用户信息成功'
             }
         }
     }

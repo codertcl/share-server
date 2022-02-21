@@ -11,6 +11,14 @@ class userService {
             birthday,
             sex
         } = user
+
+        // 注册的用户的名字不能重复
+        let executeRes = await connection.execute('SELECT * FROM user WHERE name= ?;', [name]);
+        // 判断该用户名对应用户是否存在 如果存在且查到的用户id和当前登录用户id不同 则该用户名会重复 提示错误
+        if (executeRes[0].length) {
+            return false
+        }
+
         const statement = 'INSERT INTO user (name,password,age,birthday,sex) VALUES (?,?,?,?,?);';
         const result = await connection.execute(statement, [name, password, age, birthday, sex]);
         return result
@@ -50,6 +58,13 @@ class userService {
         const statement = 'update user set name=?,age=?,sex=?,avatar_url=? WHERE id= ?;';
         const result = await connection.execute(statement, [name, age, sex, avatar_url, id]);
         return true;
+    }
+
+    ////通过id更新user表中用户密码
+    async updatePassword(password, id) {
+        const statement = 'update user set password=? WHERE id= ?;';
+        const result = await connection.execute(statement, [password, id]);
+        return result;
     }
 }
 

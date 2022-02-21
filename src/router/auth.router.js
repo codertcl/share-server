@@ -10,6 +10,7 @@ const {
     verifyLogin,
     verifyAuth
 } = require('../middleware/auth.middleware.js')
+// 登录
 authRouter.post('/login',verifyLogin,login)
 authRouter.get('/test',verifyAuth,success)
 

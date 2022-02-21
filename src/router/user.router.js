@@ -16,12 +16,15 @@ const {
 const {
     create,
     getUserInfo,
-    updateUserInfo
+    updateUserInfo,
+    updatePassword
 } = require('../controller/user.controller')
 //1:添加用户
-userRouter.post('/register', verifyAuth, handlePassword, create)
+userRouter.post('/register', handlePassword, create)
 //2:通过接口请求获取用信息
 userRouter.get('/:userId/userInfo', getUserInfo)
 //3:通过接口更新用户信息
 userRouter.post('/:userId/userInfo', updateUserInfo)
+//4:更新用户密码
+userRouter.patch('/:userId/updatePassword',verifyAuth,handlePassword, updatePassword)
 module.exports = userRouter

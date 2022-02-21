@@ -5,7 +5,11 @@ class CommentController {
     async create(ctx, next) {
         const {momentId, content} = ctx.request.body;
         const {id} = ctx.user
-        ctx.body = await service.create(momentId, content, id)
+        await service.create(momentId, content, id)
+        ctx.body = {
+            status: 200,
+            message:'评论发布成功'
+        }
     }
 
     //2:回复某条评论 多了一个评论的id

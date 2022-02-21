@@ -10,6 +10,7 @@ class authController {
             id,
             name
         } = ctx.user
+        // 私钥加密 公钥解密 生成token
         const token = jwt.sign({
             id,
             name
